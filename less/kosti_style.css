@@ -1,0 +1,40 @@
+.console{
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    color: green;
+}
+.main_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 406px;
+}
+
+.console_block_1 {
+    padding-right: 60px;
+}
+
+.manu_block {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+}
+.custom_block {
+    display: flex;
+    justify-content: center;
+}
+
+.names_block.custom_block {
+    flex-direction: column;
+}
+.Image_block {
+    /* display: flex; */
+    width: 400px;
+}
+
+.Image_block img {
+    width: 100%;
+}
