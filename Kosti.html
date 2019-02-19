@@ -7,29 +7,35 @@
 
 </head>
 <body>
-    <div class="main_block">
-        <div class="console_block_1">
-            <textarea id="console" class="console"></textarea>
+    <div class="first_block">
+        <div class="main_block">
+            <div class="console_block_1">
+                <textarea id="console" class="console"></textarea>
+            </div>
+            <div class="manu_block">
+                <div class="names_block custom_block">
+                    <input class="" type="text" id="firstPlayer" placeholder="Перший гравець">
+                    <input class="" type="text" id="secondPlayer" placeholder="Другий гравець">
+                </div>
+                <div class="button_block custom_block">
+                    <button id="start" onclick="shuflle()">START!</button>
+                    <button id="clear" onclick="clearButton()">Clear</button>
+                </div>
+                <div class="score_block custom_block">
+                    <input id="firstScore" type="number">
+                    <input id="secondScore" type="number">
+                    <input id="drawScore" type="number">
+                </div>
+            </div>
         </div>
-        <div class="manu_block">
-            <div class="names_block custom_block">
-                <input class="" type="text" id="firstPlayer" placeholder="Перший гравець">
-                <input class="" type="text" id="secondPlayer" placeholder="Другий гравець">
+        <div class="Image_block">
+            <div class="image_1">
+                <img id="firstPhoto">
             </div>
-            <div class="button_block custom_block">
-                <button id="start" onclick="shuflle()">START!</button>
-                <button id="clear" onclick="clearButton()">Clear</button>
-            </div>
-            <div class="score_block custom_block">
-                <input id="firstScore" type="number">
-                <input id="secondScore" type="number">
-                <input id="drawScore" type="number">
+            <div class="image_2">
+                <img id="secondPhoto">
             </div>
         </div>
-    </div>
-    <div class="Image_block">
-        <img id="firstPhoto">
-        <img id="secondPhoto">
     </div>
 
     <script src="jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -82,10 +88,10 @@
         }
         function cubImage(number,photo) {
             if (photo==1){
-                $("#firstPhoto").attr("src","Image/"+number+".png")
+                $("#firstPhoto").attr("src","Image/"+number+".png").css("border", "2px solid white").css("border-radius","25%");
             } 
             else {
-                $("#secondPhoto").attr("src","Image/"+number+".png");
+                $("#secondPhoto").attr("src","Image/"+number+".png").css("border", "2px solid white").css("border-radius","25%");
             }
 
         }

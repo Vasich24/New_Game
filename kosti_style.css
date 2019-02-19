@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+.console{
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    color: green;
+}
+.main_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 406px;
+}
+
+.console_block_1 {
+    padding-right: 60px;
+}
+
+.manu_block {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+}
+.custom_block {
+    display: flex;
+    justify-content: center;
+}
+
+.names_block.custom_block {
+    flex-direction: column;
+}
+.Image_block {
+    align-items: center;
+    display: flex;
+    width: 60%;
+    height: 350px;
+    justify-content: space-evenly;
+}
+
+.Image_block img {
+    width: 250px;
+    height: 250px;
+}
+.first_block{
+    background-image: url(https://1.f.ix.de/scale/geometry/743x453/q85/download/media/suche/the-matrix-trilogy-screensaver-1_1-1-6.png);
+    background-position: center;
+    background-size: auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
