@@ -1,0 +1,39 @@
+html,body,li,ul,h1,h2,h3,h4,h5,h6,a,p {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+img{
+    width: 100%;
+}
+body{
+    background: url("https://jooinn.com/images/abstract-background-279.jpg");
+    background-attachment: fixed;
+}
+header{
+    background: rgba(255,255,255,.3);
+}
+main{
+    padding: 2em 0;
+    margin: 0 4em;
+    background: rgba(255,255,255,.3);
+}
+.main_menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.one_menu_item {
+    padding: 1em;
+    transition: all 1s ease;
+    text-decoration: none;
+    color: #f6f6f6;
+}
+
+.one_menu_item:hover {
+    background: #f1f1f1fa;
+    box-shadow: 0 0 5px black;
+    color: #222;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--<input type="text" onblur="alert_value('That was input blur')">-->
+    <!--<select onchange="alert_value('That was selected change')">-->
+        <!--<option value="First">First</option>-->
+        <!--<option value="Second">Second</option>-->
+        <!--<option value="Third">Third</option>-->
+    <!--</select>-->
+
+    <!--<input type="text" onchange="alert_value('text input='+this.value)">-->
+    <!--<select onchange="alert_value(this.value + '- selected')">-->
+        <!--<option value="First">First</option>-->
+        <!--<option value="Second">Second</option>-->
+        <!--<option value="Third">Third</option>-->
+    <!--</select>-->
+    <header>
+        Module1
+        <div class="main_menu" id="main_menu"></div>
+    </header>
+    <main>
+        <button onclick="initVegSelect()">Init vegSelect</button>
+
+        <select id="vegSelect"></select>
+        <br>
+        <input type="text" id="newEl" placeholder="Name new vegetables">
+        <button onclick="addButtonClick()">Add element</button>
+        <br>
+
+        <ul id="massiveElements">
+
+        </ul>
+    </main>
+
+    <script>
+        function helloWorld() {
+            alert('Hello World!');
+        }
+        function alert_value(value) {
+            alert(value);
+
+        }
+        var vegetables =[];
+        function setDefaultVegetables() {
+            vegetables =['Cucumber','Tomato','Misha','Potato'];
+        }
+        setDefaultVegetables();
+        // var vegetables =['Cucumber','Tomato','Misha','Potato'];
+        var vegSelect = document.getElementById('vegSelect');
+
+        function initVegSelect() {
+            // var vegetables =['Cucumber','Tomato','Misha','Potato'];
+            vegSelect.innerHTML = "";
+            for (var i=0; i<vegetables.length; i++) {
+                vegSelect.innerHTML = vegSelect.innerHTML +'<option value="'+vegetables[i]+'">'+vegetables[i]+'</option>';
+
+            }
+
+        }
+        function addNewVeg(name) {
+            // vegSelect.innerHTML = vegSelect.innerHTML +'<option value="'+name+'">'+name+'</option>';
+            vegetables.push(name);
+            updateList();
+        }
+        function removedElement(id) {
+            // vegetables.slice(id);
+            var newVegetables = [];
+            for (var i=0; i<vegetables.length;i++){
+                if (i!=id){
+                    newVegetables.push(vegetables[i]);
+                }
+            }
+            vegetables = newVegetables;
+            updateList();
+        }
+        
+        function addButtonClick() {
+            var inpText = document.getElementById('newEl');
+            addNewVeg(inpText.value);
+            initVegSelect();
+            inpText.value = '';
+        }
+
+        function updateList() {
+            var list = document.getElementById('massiveElements');
+
+            list.innerHTML = '';
+
+            for (var i=0; i<vegetables.length;i++){
+                list.innerHTML = list.innerHTML + '<li>'+vegetables[i]+'<button style="color: red" onclick="removedElement('+i+')">x</button></li>';
+            }
+        }
+
+
+    </script>
+    <script type="text/javascript" src="Main_Menu.js"></script>
+    <script>
+        inintMainMenu(0);
+    </script>
+
+</body>
+</html>

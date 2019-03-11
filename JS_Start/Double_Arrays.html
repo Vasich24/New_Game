@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoubleArrays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Module1
+        <div class="main_menu" id="main_menu"></div>
+    </header>
+    <main>
+        <form class="add_user_form">
+            <div class="form-name">
+
+            </div>
+            <div class="form-inputs">
+                <div class="form-control">
+                    <label for="lastname">Прізвище</label>
+                    <input type="text" id="lastname" placeholder="Прізвище">
+                </div>
+
+                <div class="form-control">
+                    <label for="name">Ім"я</label>
+                    <input type="text" id="name" placeholder="Імя">
+                </div>
+
+                <div class="form-control">
+                    <label for="secondname">По-батькові</label>
+                    <input type="text" id="secondname" placeholder="По-батькові">
+                </div>
+
+                <div class="form-control">
+                    <label for="age">Вік</label>
+                    <input type="text" id="age" placeholder="Вік">
+                </div>
+
+                <div class="form-control">
+                    <label for="birth">Дата народження</label>
+                    <input type="text" id="birth" placeholder="Дата народження">
+                </div>
+
+                <div class="form-control">
+                    <label for="marital">Сімейний стан</label>
+                    <select id="marital">
+                        <option>-Виберіть-</option>
+                        <option value="Home alone">Home alone</option>
+                        <option value="Not alone">Not alone</option>
+                        <option value="Babich">Babich</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-submit">
+                <div class="form-control">
+                    <input type="submit" id="addUser" value="Додати">
+                </div>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <caption>Користувачі</caption>
+                <tr>
+                    <th>Прізвище</th>
+                    <th>Ім"я</th>
+                    <th>По-батькові</th>
+                    <th>Вік</th>
+                    <th>Дата народження</th>
+                    <th>Сімейний стан</th>
+                </tr>
+            </thead>
+            <tbody id="mainUserList">
+
+            </tbody>
+        </table>
+
+    </main>
+    <script type="text/javascript" src="Main_Menu.js"></script>
+    <script>
+        inintMainMenu(1);
+    </script>
+    <script>
+        var userList = [];
+
+        function addNewUser(lastName,Name,secondName,age,birth,marital) {
+            userList.push([lastName,Name,secondName,age,birth,marital]);
+            initUsersList()
+        }
+        addNewUser('Neydel','Yenhen','Vladimirovich','21','01.01.1998','Not alone');
+        addNewUser('Chikinin','Vasil','Oleksandovich','26','24.06.1992','Home alone');
+        addNewUser('Shcherbanich','Vitaliy','Vitaliyovich','22','17.07.1997','Not alone');
+        addNewUser('Shandra','Mihaylo','Mihaylovich','19','09.11.1999','Babich');
+        addNewUser('Barta','Adalbert','Adalbertovich','29','10.07.1989','Married');
+
+        function initUsersList() {
+            var tbody = document.getElementById('mainUserList');
+            var innerUser = '';
+            for (var i=0; i<userList.length;i++){
+                innerUser += "<tr>";
+                for (var j=0; j<userList[i].length;j++){
+                    innerUser += "<td>"+userList[i][j]+"</td>";
+                }
+                innerUser += "</tr>"
+            }
+            tbody.innerHTML = innerUser;
+        }
+    </script>
+
+
+</body>
+</html>
